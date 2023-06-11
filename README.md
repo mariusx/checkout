@@ -32,5 +32,21 @@ curl -X 'POST' \
 ## Approach
 - Initial setup
 - Add checkout endpoint and mock response
+- Impl checkout partially without discount
+- Solved discount
+- Added data to Watch and Discount repos
+- Fix integration test
+- ... stopping now
 
 ## Improvements
+Code and build:
+- Input validation
+- More (negative) tests
+- Refactoring
+- Build pipeline
+- Add code analysis, code coverage, dependency check to build
+
+UseCase: 
+- Maybe it should be possible to sell other items than Watches?
+- Support for decimals?
+- Extend response with more information?
