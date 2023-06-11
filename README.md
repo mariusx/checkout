@@ -31,5 +31,6 @@ curl -X 'POST' \
 
 ## Approach
 - Initial setup
+- Add checkout endpoint and mock response
 
 ## Improvements
