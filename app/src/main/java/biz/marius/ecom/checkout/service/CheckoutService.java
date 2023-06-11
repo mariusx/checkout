@@ -38,13 +38,12 @@ public class CheckoutService {
         var discount = discountForId(id);
 
         if (discount.isPresent()) {
-          // TODO
+          totalPrice += discount.get().calculatePrice(quantity, price);
         } else {
           totalPrice += quantity * price;
         }
 
       }
-//      totalPrice = 230L;
     }
     return totalPrice;
   }
