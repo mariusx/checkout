@@ -53,7 +53,7 @@ public class CheckoutService {
   }
 
   private Map<String, List<Watch>> watchesGrouped(List<String> ids) {
-    var distinctWatches = ids.stream().distinct().toList();
-    return watchRepository.findByIdIn(distinctWatches);
+    return watchRepository.findByIdIn(ids);
+
   }
 }
