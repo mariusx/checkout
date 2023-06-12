@@ -1,0 +1,34 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: checkout-app
+spec:
+  selector:
+    app: checkout-app
+  ports:
+    - protocol: TCP
+      port: 8080
+  type: ClusterIP
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: checkout-app
+  labels:
+    app: checkout-app
+spec:
+  selector:
+    matchLabels:
+      app: checkout-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: checkout-app
+    spec:
+      containers:
+        - name: checkout-app
+          image: checkout-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
