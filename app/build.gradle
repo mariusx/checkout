@@ -2,6 +2,7 @@ plugins {
   id 'java'
   id 'org.springframework.boot' version '3.1.0'
   id 'io.spring.dependency-management' version '1.1.0'
+  id 'com.google.cloud.tools.jib' version '3.3.2'
 }
 
 group = 'biz.marius.ecom'
@@ -33,4 +34,14 @@ dependencies {
 
 tasks.named('test') {
   useJUnitPlatform()
+}
+
+jib {
+  from {
+    image = 'eclipse-temurin:17.0.7_7-jre-alpine'
+  }
+  to {
+    image = "checkout-app"
+    tags = [version, 'latest']
+  }
 }
